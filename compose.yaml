@@ -1,0 +1,10 @@
+services:
+  server:
+    build: .
+    # Do not change these preset environment variables, edit the .env file instead
+    environment:
+      HOST: 0.0.0.0
+      DOWNLOAD_DIR: /root/StreamripDownloads
+    env_file: .env
+    volumes:
+      - ${DOWNLOAD_DIR}:/root/StreamripDownloads

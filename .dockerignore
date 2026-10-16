@@ -1,0 +1,10 @@
+**/.DS_Store
+__pycache__/
+.venv/
+.git/
+.gitignore
+Dockerfile
+compose.yaml
+.env
+.env.example
+music/
