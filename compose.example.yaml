@@ -1,0 +1,10 @@
+services:
+  server:
+    build: .
+    # Do not change these preset environment variables
+    environment:
+      HOST: 0.0.0.0
+      LIBRARY_PATH: /root/StreamripDownloads
+    env_file: .env
+    volumes:
+      - ${LIBRARY_PATH}:/root/StreamripDownloads

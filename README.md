@@ -44,6 +44,8 @@ Copy `.env.example` to `.env` and configure your settings.
 
 ### Using Docker
 
+Copy `compose.example.yaml` to `compose.yaml` and configure your settings.
+
 Build and run using Docker Compose:
 
 ```bash
