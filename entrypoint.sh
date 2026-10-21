@@ -18,8 +18,8 @@ sed -i "s/^check_for_updates = true$/check_for_updates = false/" "$CONFIG_PATH"
 # Set Deezer ARL
 sed -i "s/^arl = \".*\"$/arl = \"${DEEZER_ARL:-}\"/" "$CONFIG_PATH"
 # Set track format
-if [ -n "${TRACK_FORMAT:-}" ]; then
-  sed -i "s/^track_format = \".*\"$/track_format = \"$TRACK_FORMAT\"/" "$CONFIG_PATH"
+if [ -n "${TRACK_FILENAME_FORMAT:-}" ]; then
+  sed -i "s/^track_format = \".*\"$/track_format = \"$TRACK_FILENAME_FORMAT\"/" "$CONFIG_PATH"
 fi
 
 exec "$@"
