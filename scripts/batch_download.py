@@ -92,22 +92,21 @@ def main():
         f"Found {len(track_ids)} track(s) to process. Sending requests to {args.api_url}...\n"
     )
 
-    failed_track_ids = []
+    failed_count = 0
     for track_id in track_ids:
         success = download_track(args.api_url, track_id)
         if not success:
-            failed_track_ids.append(track_id)
-
-    if failed_track_ids:
-        try:
-            with open(args.failed, "w") as f:
-                for track_id in failed_track_ids:
+            failed_count += 1
+            try:
+                with open(args.failed, "a") as f:
                     f.write(f"{track_id}\n")
-            print(
-                f"\nSaved {len(failed_track_ids)} failed track ID(s) to {args.failed}"
-            )
-        except Exception as e:
-            print(f"Error writing failed track IDs to {args.failed}: {e}")
+            except Exception as e:
+                print(f"Error writing failed track ID {track_id} to {args.failed}: {e}")
+
+    if failed_count > 0:
+        print(
+            f"\nProcessed with errors: {failed_count} failed track ID(s) logged to {args.failed}"
+        )
     else:
         print("\nAll tracks processed successfully!")
 
