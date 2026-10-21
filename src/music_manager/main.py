@@ -12,7 +12,7 @@ load_dotenv()
 
 HOST = os.getenv("HOST", "127.0.0.1")
 PORT = int(os.getenv("PORT", "8000"))
-DEBUG = os.getenv("DEBUG", "").lower() in ("1" or "true")
+DEBUG = os.getenv("DEBUG", "").lower() in ("1", "true")
 LIBRARY_PATH = Path(os.getenv("LIBRARY_PATH") or Path.home() / "music")
 DB_PATH = Path(os.getenv("DB_PATH") or LIBRARY_PATH / "downloads.db")
 
