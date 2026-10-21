@@ -6,6 +6,7 @@ services:
       HOST: 0.0.0.0
       PORT: 8080
       LIBRARY_PATH: /root/StreamripDownloads
+      DB_PATH: /root/StreamripDownloads/downloads.db
     env_file: .env
     ports:
       - ${PORT}:8080
