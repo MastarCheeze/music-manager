@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import json
 import urllib.error
 import urllib.request
@@ -91,6 +92,9 @@ def main():
     print(
         f"Found {len(track_ids)} track(s) to process. Sending requests to {args.api_url}...\n"
     )
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(args.failed, "a") as f:
+        f.write(f"# {timestamp}\n")
 
     failed_count = 0
     for track_id in track_ids:
