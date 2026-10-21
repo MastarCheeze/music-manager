@@ -4,7 +4,10 @@ services:
     # Do not change these preset environment variables
     environment:
       HOST: 0.0.0.0
+      PORT: 8080
       LIBRARY_PATH: /root/StreamripDownloads
     env_file: .env
+    ports:
+      - ${PORT}:8080
     volumes:
       - ${LIBRARY_PATH}:/root/StreamripDownloads
